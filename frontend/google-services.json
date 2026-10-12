@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "308473306407",
+    "project_id": "jay-kisan-d850a",
+    "storage_bucket": "jay-kisan-d850a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:308473306407:android:4e2b91a4cffb0d7b99dd02",
+        "android_client_info": {
+          "package_name": "com.emergent.jaykisaninventory.jkx8r8"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmD-5Wk3YDSTScIr3BKxsgp8Or3ShvQLg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,176 @@
+{
+  "app_name": "Jay Kisan",
+  "personality": "1 iOS-Native Clean",
+  "personality_one_liner": "A professional, fast, and highly readable utility designed for warehouse efficiency and clear business operations.",
+  "color": {
+    "surface": "#F9FAFB",
+    "onSurface": "#111827",
+    "surfaceSecondary": "#FFFFFF",
+    "onSurfaceSecondary": "#374151",
+    "surfaceTertiary": "#F3F4F6",
+    "onSurfaceTertiary": "#4B5563",
+    "surfaceInverse": "#1F2937",
+    "onSurfaceInverse": "#F9FAFB",
+    "brand": "#166534",
+    "onBrand": "#FFFFFF",
+    "brandPrimary": "#15803D",
+    "onBrandPrimary": "#FFFFFF",
+    "brandSecondary": "#DCFCE7",
+    "onBrandSecondary": "#166534",
+    "brandTertiary": "#F0FDF4",
+    "onBrandTertiary": "#15803D",
+    "success": "#059669",
+    "onSuccess": "#FFFFFF",
+    "warning": "#CA8A04",
+    "onWarning": "#FFFFFF",
+    "error": "#DC2626",
+    "onError": "#FFFFFF",
+    "info": "#4B5563",
+    "onInfo": "#FFFFFF",
+    "border": "#E5E7EB",
+    "borderStrong": "#D1D5DB",
+    "divider": "#F3F4F6",
+    "muted": "#6B7280"
+  },
+  "typography": {
+    "displayFontFamily": "PlusJakartaSans-Medium",
+    "textFontFamily": "PlusJakartaSans-Regular",
+    "scale": {
+      "sm": 12,
+      "base": 14,
+      "lg": 16,
+      "xl": 20,
+      "2xl": 24
+    }
+  },
+  "spacing": {
+    "rule": "Handle spacing correctly dont have extra spaces where its not required, handle padding and margin corectly and subtle for buttons and components",
+    "xs": 4,
+    "sm": 8,
+    "md": 12,
+    "lg": 16,
+    "xl": 24,
+    "2xl": 32,
+    "3xl": 48
+  },
+  "radius_tokens": {
+    "sm": 6,
+    "md": 12,
+    "lg": 20,
+    "pill": 999
+  },
+  "shadow_tier": 1,
+  "navigation": "bottom_tabs for mobile owner, stack_only for mobile employee, drawer/sidebar for web",
+  "icon_set": "Phosphor",
+  "glassmorphism": {
+    "enabled": true,
+    "do's": [
+      "Sticky headers over scrolling inventory lists",
+      "Bottom tab bar for Owner UI",
+      "Floating Action Buttons for Add/Scan actions"
+    ],
+    "dont's": [
+      "Form fields",
+      "Dense list rows",
+      "Body content"
+    ]
+  },
+  "platform_libraries": {
+    "glass": {
+      "ios": "expo-glass-effect",
+      "android": "expo-blur",
+      "low_end_android_fallback": "solid surfaceSecondary"
+    },
+    "image": "expo-image",
+    "blur": "expo-blur",
+    "bottom_sheet": "@gorhom/bottom-sheet",
+    "animation": "react-native-reanimated",
+    "gesture": "react-native-gesture-handler"
+  },
+  "screens": [
+    {
+      "name": "Login",
+      "purpose": "Secure entry for Owner or Employee with ID and password.",
+      "states": {
+        "loading": "Spinner in submit button",
+        "empty": "N/A",
+        "error": "Clear error text above password input"
+      },
+      "layout": "Centered form, logo up top, single column, large 'Login' CTA. KeyboardAvoidingView used."
+    },
+    {
+      "name": "Warehouse Selector",
+      "purpose": "Allows users to select their active warehouse context.",
+      "states": {
+        "loading": "Skeleton list of warehouses",
+        "empty": "No warehouses assigned illustration + contact admin",
+        "error": "Failed to load warehouses + retry button"
+      },
+      "layout": "Bottom sheet or modal on mobile, simple dropdown on web. Large touch targets."
+    },
+    {
+      "name": "Owner Dashboard",
+      "purpose": "High-level overview of business health, total inventory, and today's KPIs.",
+      "states": {
+        "loading": "Skeleton blocks for KPIs and charts",
+        "empty": "Zero state with 'Add your first product' CTA",
+        "error": "Failed to fetch dashboard data + retry button"
+      },
+      "layout": "Grid of KPI cards at top. Below: sections for 'Low Stock', 'Today's Sales', 'Recent Activity'. Web uses side-by-side columns, mobile uses vertical scroll."
+    },
+    {
+      "name": "Inventory List",
+      "purpose": "Primary view for browsing 1M+ products, filtering, and seeing stock.",
+      "states": {
+        "loading": "Skeleton list items",
+        "empty": "Illustration 'No products found' for search, or 'Inventory empty'",
+        "error": "Failed to load products + retry button"
+      },
+      "layout": "Sticky search/filter bar (glass). Virtualized/infinite scroll list. Mobile: tappable rows with product image, name, stock badge. Web: Data table with sorting columns."
+    },
+    {
+      "name": "Employee Sell Flow",
+      "purpose": "Ultra-fast POS-style checkout for employees to log sales.",
+      "states": {
+        "loading": "Spinner during transaction commit",
+        "empty": "N/A",
+        "error": "Clear modal 'Insufficient stock - only X available'"
+      },
+      "layout": "Step 1: Huge Scan button + manual search. Step 2: Large quantity stepper (big numbers). Step 3: Customer select. Step 4: Confirmation screen with sticky CTA at bottom."
+    },
+    {
+      "name": "Transactions Ledger",
+      "purpose": "Log of all movements (IN, OUT, ADJUST, SELL).",
+      "states": {
+        "loading": "Skeleton list items",
+        "empty": "Illustration 'No transactions yet'",
+        "error": "Failed to load ledger + retry button"
+      },
+      "layout": "Filter chips at top (glass). List of transactions with colored status/type tags (e.g. SALE, STOCK_IN). Expandable row for details."
+    }
+  ],
+  "images": {
+    "warehouse_hero": {
+      "url": "https://images.unsplash.com/photo-1553413077-190dd305871c?crop=entropy&cs=srgb&fm=jpg",
+      "alt": "Large agriculture warehouse with stacked inventory"
+    },
+    "tractor_pallets": {
+      "url": "https://images.pexels.com/photos/20280055/pexels-photo-20280055.jpeg?auto=compress&cs=tinysrgb&dpr=2",
+      "alt": "Tractor among wooden pallets in warehouse"
+    },
+    "barcode_scanning": {
+      "url": "https://images.pexels.com/photos/12935049/pexels-photo-12935049.jpeg?auto=compress&cs=tinysrgb&dpr=2",
+      "alt": "Scanning inventory with a handheld scanner"
+    }
+  },
+  "instructions_to_main_agent": [
+    "Follow 1 iOS-Native Clean layout principles: generous padding, clear grouping.",
+    "Web Layout Rule: For screens >= 1024px, display a persistent left sidebar (240px wide) containing navigation. Main content area should use data tables for list views instead of mobile list rows.",
+    "Employee Mobile UI Rule: Prioritize speed. Touch targets MUST be >= 44x44. The Sell flow needs a massive 'Scan' button, huge font sizes for stock numbers, and minimal typing (quantity stepper instead of input where possible).",
+    "Currency Rule: Always prefix with 'Rs.' (NPR). Handle missing prices gracefully ('-'). Never show 0 for price unless actually 0.",
+    "Strictly avoid any blue or purple colors per the anti-pattern rules. Use gray (#4B5563) for info states and yellow (#CA8A04) for warnings.",
+    "Use Phosphor icons consistently, outlined for inactive, filled for active states.",
+    "Font weight cap: Do not use any font weight above 500 (Medium). Rely on size and color for hierarchy.",
+    "Implement sticky primary CTAs over scrolling content where a primary action exists (e.g. Confirm Sale)."
+  ]
+}
